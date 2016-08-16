@@ -3,9 +3,9 @@
  */
 
 angular.module('webapp')
-  .service('NewsService', ['$http', '$q', NewsService]);
+  .service('UserService', ['$http', '$q', UserService]);
 
-function NewsService($http, $q) {
+function UserService($http, $q) {
   function handleRequest(method, url, data) {
     var defered = $q.defer();
     var config = {
@@ -16,11 +16,8 @@ function NewsService($http, $q) {
     if ("POST" === method) {
       config.data = data;
     } else if ("GET" === method) {
-      console.log(data);
       config.params = data;
     }
-
-    console.log(config);
 
     $http(config).success(function(data) {
       defered.resolve(data);
@@ -33,13 +30,13 @@ function NewsService($http, $q) {
 
   return {
     list: function(params) {
-      return handleRequest('GET', '/news', params);
+      return handleRequest('GET', '/user', params);
     },
     save: function(data) {
-      return handleRequest('POST', '/news', data);
+      return handleRequest('POST', '/user', data);
     },
     detail: function(id) {
-      return handleRequest('GET', '/news/'+ id);
+      return handleRequest('GET', '/user/'+ id);
     }
   }
 }

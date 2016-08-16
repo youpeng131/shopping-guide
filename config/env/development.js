@@ -3,5 +3,11 @@
  */
 module.exports = {
   port: 7101,
-  mongodb: 'mongodb://localhost:cms'
+  mysql: {
+    host: '127.0.0.1',
+    user: 'root',
+    password: '',
+    database:'test',
+    port: 3306
+  }
 };
