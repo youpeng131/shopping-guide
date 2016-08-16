@@ -1,0 +1,10 @@
+node_modules/
+.sass-cache
+.idea
+.tmp
+build
+ncp-debug.log
+npm-debug.log
+logs
+.DS_Store
+*.rdb
